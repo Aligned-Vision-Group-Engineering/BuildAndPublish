@@ -2,8 +2,8 @@ name: BuildAndPublish
 description: 'Build a .NET project and publish the .nupkg to the feed'
 inputs:
   SolutionName: 
-      description: 'Name of the Solution'
-      required: true
+    description: 'Name of the Solution'
+    required: true
   BuildSolutionType:
     desciption: 'Build Configuration switch.'
     default: 'Release'
