@@ -38,6 +38,9 @@ runs:
     run: dotnet build ${{ inputs.SolutionName }} --configuration ${{ inputs.BuildSolutionType }} --no-restore
     shell: bash
     
+  - name: Clean
+    run: dotnet clean ${{ inputs.SolutionName }}
+    
   - name: Pack
     id: PackForNuget
     run: dotnet pack --configuration ${{ inputs.BuildSolutionType }}
