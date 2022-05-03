@@ -6,8 +6,9 @@ inputs:
       required: true
   BuildSolutionType:
     desciption: 'Build Configuration switch.'
-    required: true
     default: 'Release'
+  Token:
+    description: 'NugetToken'
 
 runs:
   using: "composite"
@@ -44,5 +45,5 @@ runs:
 
   - name: Put To Nuget - from found nupkg
     if: inputs.PathToPackage == 'unknown'
-    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source "github"
     shell: bash
