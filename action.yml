@@ -26,7 +26,8 @@ runs:
     shell: bash
     
   - name: Clean
-    run: dotnet clean ${{ inputs.SolutionName }}
+    #run: dotnet clean ${{ inputs.SolutionName }}
+    run: dotnet clean && dotnet nuget locals all --clear
     shell: bash
     
   - name: Setup .NET
