@@ -40,6 +40,7 @@ runs:
     
   - name: Clean
     run: dotnet clean ${{ inputs.SolutionName }}
+    shell: bash
     
   - name: Pack
     id: PackForNuget
