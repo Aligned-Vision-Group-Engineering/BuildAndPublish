@@ -22,7 +22,7 @@ runs:
     uses: NuGet/setup-nuget@v1.0.5
     
   - name: Add organization nuget feed
-    dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
+    run: dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
     
   - name: Setup .NET
     uses: actions/setup-dotnet@v2
