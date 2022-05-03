@@ -21,13 +21,13 @@ runs:
   - name: Setup Nuget
     uses: NuGet/setup-nuget@v1.0.5
     
-  - name: Add organization nuget feed
-    run: dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
-    shell: bash
-    
   - name: Clean
     #run: dotnet clean ${{ inputs.SolutionName }}
     run: dotnet clean && dotnet nuget locals all --clear
+    shell: bash
+    
+  - name: Add organization nuget feed
+    run: dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
     shell: bash
     
   - name: Setup .NET
