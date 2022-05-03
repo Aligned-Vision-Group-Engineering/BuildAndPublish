@@ -44,6 +44,5 @@ runs:
       wildcard: '*.nupkg'
 
   - name: Put To Nuget - from found nupkg
-    if: inputs.PathToPackage == 'unknown'
     run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source "github"
     shell: bash
