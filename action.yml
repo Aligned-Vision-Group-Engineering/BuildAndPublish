@@ -41,3 +41,8 @@ runs:
     uses: DovnarAlexander/github-action-file-detection@master
     with:
       wildcard: '*.nupkg'
+
+  - name: Put To Nuget - from found nupkg
+    if: inputs.PathToPackage == 'unknown'
+    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+    shell: bash
