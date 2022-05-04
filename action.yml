@@ -39,9 +39,9 @@ runs:
     with:
       dotnet-version: 5.0.x
       
-#  - name: Restore dependencies
-#    run: nuget restore ${{ inputs.SolutionName }}
-#    shell: bash
+  - name: Restore dependencies
+    run: nuget restore ${{ inputs.SolutionName }}
+    shell: bash
     
   - name: Build
     run: dotnet build ${{ inputs.SolutionName }} --configuration ${{ inputs.BuildSolutionType }} --no-restore
