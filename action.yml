@@ -30,6 +30,10 @@ runs:
     run: dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
     shell: bash
     
+  - name: Add Nuget.org
+    run: dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+    shell: bash
+    
   - name: Setup .NET
     uses: actions/setup-dotnet@v2
     with:
