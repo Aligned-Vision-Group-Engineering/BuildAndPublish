@@ -25,15 +25,7 @@ runs:
     #run: dotnet clean ${{ inputs.SolutionName }}
     run: dotnet clean && dotnet nuget locals all --clear
     shell: bash
-    
-  - name: Add organization nuget feed
-    run: dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
-    shell: bash
-    
-#  - name: Add Nuget.org
-#    run: dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-#    shell: bash
-    
+     
   - name: Setup .NET
     uses: actions/setup-dotnet@v2
     with:
@@ -43,6 +35,14 @@ runs:
 #    run: nuget restore ${{ inputs.SolutionName }}
     run: dotnet restore
     shell: bash
+    
+  - name: Add organization nuget feed
+    run: dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
+    shell: bash
+    
+#  - name: Add Nuget.org
+#    run: dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+#    shell: bash    
     
   - name: Build
     run: dotnet build ${{ inputs.SolutionName }} --configuration ${{ inputs.BuildSolutionType }} --no-restore
