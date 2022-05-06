@@ -60,5 +60,5 @@ runs:
       wildcard: '*.nupkg'
 
   - name: Put To Nuget - from found nupkg
-    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source "github"
+    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source github
     shell: bash
