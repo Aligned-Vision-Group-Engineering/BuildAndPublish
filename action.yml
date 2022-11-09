@@ -43,7 +43,7 @@ runs:
   - name: Restore dependencies
 #    run: nuget restore ${{ inputs.SolutionName }}
     run: nuget restore $SolutionName
-#    shell: bash
+    shell: bash
     
   - name: Build
     run: dotnet build ${{ inputs.SolutionName }} --configuration ${{ inputs.BuildSolutionType }} --no-restore
