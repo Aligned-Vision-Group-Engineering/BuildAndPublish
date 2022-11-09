@@ -19,7 +19,7 @@ runs:
   - uses: actions/checkout@v3
   
   - name: Setup Nuget
-    uses: NuGet/setup-nuget@v1.0.5
+    uses: NuGet/setup-nuget@v1.1.1
     
   - name: Clean
     #run: dotnet clean ${{ inputs.SolutionName }}
