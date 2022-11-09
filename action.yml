@@ -29,8 +29,8 @@ runs:
   - name: Setup .NET
     uses: actions/setup-dotnet@v3.0.3
     with:
-      #dotnet-version: 5.0.x
-      dotnet-version: 2.0.3
+      dotnet-version: 5.0.x
+      #dotnet-version: 2.0.3
     
   - name: Add organization nuget feed
     run: dotnet nuget add source --username ${{ inputs.User }} --password ${{ inputs.Token }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
