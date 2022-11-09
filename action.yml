@@ -61,5 +61,6 @@ runs:
       wildcard: '*.nupkg'
 
   - name: Put To Nuget - from found nupkg
-    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source github
+    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
+#    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source github
     shell: bash
