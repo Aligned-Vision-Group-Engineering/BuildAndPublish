@@ -46,7 +46,7 @@ runs:
     shell: bash
     
   - name: Build
-    run: dotnet build ${{ inputs.SolutionName }} --configuration ${{ inputs.BuildSolutionType }} --no-restore --property:EnableWindowsTargeting=true
+    run: dotnet build ${{ inputs.SolutionName }} --configuration ${{ inputs.BuildSolutionType }} --no-restore
     shell: bash
     
   - name: Pack
