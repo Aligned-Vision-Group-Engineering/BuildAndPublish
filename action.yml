@@ -53,14 +53,15 @@ runs:
     id: PackForNuget
     run: dotnet pack --configuration ${{ inputs.BuildSolutionType }}
     shell: bash
-    
-  - name: Find nupkg
-    id: FindNugetPackage
-    uses: DovnarAlexander/github-action-file-detection@master
-    with:
-      wildcard: '*.nupkg'
+
+ # - name: Find nupkg
+  #  id: FindNugetPackage
+   # uses: DovnarAlexander/github-action-file-detection@master
+    #with:
+     # wildcard: '*.nupkg'
 
   - name: Put To Nuget - from found nupkg
-    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --source github
+    #run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --source github
+    run: dotnet nuget push **\*.nupkg --source github
 #    run: dotnet nuget push "${{ steps.FindNugetPackage.outputs.found }}" --api-key ${{ inputs.Token }} --source github
     shell: bash
