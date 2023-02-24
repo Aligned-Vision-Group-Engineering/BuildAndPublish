@@ -46,11 +46,11 @@ runs:
   - name: Test
     run: dotnet test
     shell: bash
-#  - name: Pack
-#    id: PackForNuget
-#    run: dotnet pack --configuration ${{ inputs.BuildSolutionType }}
-#    shell: bash
+  - name: Pack
+    id: PackForNuget
+    run: dotnet pack --configuration ${{ inputs.BuildSolutionType }}
+    shell: bash
 
-#  - name: Put To Nuget - from found nupkg
-#    run: dotnet nuget push **\*.nupkg --source github
-#    shell: bash
+  - name: Put To Nuget - from found nupkg
+    run: dotnet nuget push **\*.nupkg --source github
+    shell: bash
