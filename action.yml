@@ -46,6 +46,7 @@ runs:
   - name: Test
     run: dotnet test
     shell: bash
+    
   - name: Pack
     id: PackForNuget
     run: dotnet pack --configuration ${{ inputs.BuildSolutionType }}
