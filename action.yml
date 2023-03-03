@@ -11,6 +11,7 @@ inputs:
     description: 'UserName'
   NugetUrl:
     description: 'Nuget URL'
+    default: "https://nuget.pkg.github.com/Aligned-Vision-Group-Engineering/index.json"
   Token:
     description: 'NugetToken'
 
